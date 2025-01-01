@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .video video{
+            position: fixed; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover;
+        }
+        .form-container{
+            height:100vh;
+            width:100%;
+            position: absolute;
+            display:flex;
+            align-items: center;
+            justify-content: right;
+
+        }
+        form{
+            background: blur(4px);
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap:20px;
+            margin-right: 100px;
+        }
+        input{
+            border-radius: 10px;
+            color:black;
+            border:none;
+            padding:10px;
+        }
+        button{
+            background-color: pink;
+            color:black;
+            border-radius: 10px;
+            border:none;
+            padding:10px;
+        }
+        a{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+            text-decoration: none;
+            color:grey;
+        }
+    </style>
+</head>
+<body>
+    <!-- Video -->
+     <div class="video">
+    <video autoplay muted loop id="myVideo">
+        <source src="Images/Power.mp4" type="video/mp4">
+      </video>
+      </div>
+        <div class="form-container">
+            <form method="POST" action="#">
+                <input type="text" name="uname",value="username" required placeholder="Username">
+                <input type="password" name="pswd" required placeholder="Password">
+                <button type="submit">Enter</button>
+                <a href="main.html">forget password ?</a>
+            </form>
+        </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+header{
+    width:100%;
+    height:100px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.main-story-window{
+    height:70px;
+    width:70px;
+    margin: 10px;
+    border-radius: 50%;
+    border:2px solid green;
+    overflow: hidden;
+}
+.main-story-window img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+    object-fit: cover;
+}

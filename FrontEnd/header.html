@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <style>
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: pink; /* Section color */
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .navbar .search-bar {
+            flex: 1;
+            margin: 0 15px;
+        }
+
+        .navbar .search-bar input {
+            width: 70%;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .navbar .menu-btn {
+            background-color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-right: 80px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-btn:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Slide-out menu styling */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .slide-menu.active {
+            right: 0;
+        }
+
+        .slide-menu .menu-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .slide-menu .menu-content a {
+            text-decoration: none;
+            color: #3498db;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="logo">Logo</a>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-content">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+        </div>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const slideMenu = document.getElementById('slideMenu');
+
+        menuBtn.addEventListener('click', () => {
+            slideMenu.classList.toggle('active');
+        });
+
+        slideMenu.addEventListener('click', (e) => {
+            if (e.target === slideMenu) {
+                slideMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
